@@ -10,11 +10,39 @@
   &:nth-child(2) {
     margin-bottom: 60px;
   }
+
+  @include tablets {
+    &:nth-child(2) {
+      margin-bottom: 31px;
+    }
+  }
+
+  @include phones {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
 }
 
 .form__block {
   flex: 1;
   margin-right: 95px;
+
+  @include tablets {
+    margin-right: 20px;
+  }
+
+  @include phones {
+    width: 95%;
+    margin-right: 0px;
+    margin-bottom: 39px;
+
+    &:nth-child(2) {
+      margin-bottom: 0px;
+    }
+  }
+
 }
 
 .form__label {
@@ -23,6 +51,12 @@
   opacity: 0.3;
   margin-bottom: 25px;
   padding-left: 50px;
+
+  @include tablets {
+    font-size: 14px;
+    margin-bottom: 17px;
+  }
+
 }
 
 .form-in {
@@ -57,18 +91,45 @@
   background: transparent;
   padding: 6px 18px;
 
+  @include tablets {
+    font-size: 14px;
+  }
+
 }
+
+.form__input:focus {
+  outline: 3px dotted  #dc9322;
+}
+
+
+
 
 .form__input--textarea {
   width: 62%;
   height: 80px;
   resize: none;
   line-height: 2;
+
+  @include tablets {
+    width: 47%;
+    height: 60px;
+  }
+
+  @include phones {
+    width: 85%;
+    height: 80px;
+    line-height: 1.71;
+  }
 }
 
 .form__row-btn {
-  width: 347px;
-  height: 80px;
+
+  @include tablets {
+    display: flex;
+    justify-content: center;
+
+  }
+
 }
 
 .form__btn {
@@ -78,5 +139,20 @@
   font-weight: bold;
   cursor: pointer;
   color: white;
-  background-color: #dc9322;
+  background: linear-gradient(to top, #d0731b, #dc9322);
+
+  @include phones {
+    font-size: 16px;
+    width: 260px;
+    height: 60px;
+  }
+  
+}
+
+.form__btn:hover {
+  background: linear-gradient(to bottom, #d0731b, #dc9322);
+}
+
+.form__btn:focus {
+  box-shadow: 1px 1px 10px 3px lightskyblue;
 }

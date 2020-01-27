@@ -9,6 +9,11 @@
   justify-content: space-between;
   align-items: center;
 
+  @include tablets {
+    background-image: url('~images/content/hero/bg/bg_hero.png');
+    background-repeat: no-repeat;
+    background-size:  cover;
+  }
 }
 
 .hero__container {
@@ -16,6 +21,12 @@
   height: 100%;
   flex-direction: column;
   justify-content: space-between;
+
+  @include tablets {
+    display: block;
+  }
+
+  
 
 }
 
@@ -25,6 +36,15 @@
   align-items: center;
   padding-top: 60px;
   color: white;
+
+  @include tablets {
+    margin-bottom: 16%;
+  }
+
+  @include phones {
+    margin-bottom: 131px;
+  }
+  
 }
 
 .hero__logo {
@@ -36,13 +56,31 @@
 
 .hero__menu {
   margin: 0 5%;
+
+  @include tablets {
+    display: none;
+  }
+}
+
+
+.hero__social {
+  @include tablets {
+    margin-left: 45%;
+  }
+
+  @include phones {
+    display: none;
+  }
 }
 
 .hero__content {
   display: flex;
   justify-content: center;
   align-items: center;
-
   color: white;
+
+  @include tablets {
+    flex-direction: column;;
+  }
 }
 

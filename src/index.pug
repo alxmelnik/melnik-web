@@ -6,14 +6,23 @@ html(lang="en")
     meta(charset="UTF-8")
     meta(name="viewport", content="width=device-width, initial-scale=1.0")
     meta(http-equiv="X-UA-Compatible", content="ie=edge")
-    title Portfolio | main page
+    title Мельник Александр | Главная страница
   body
     .wrapper
-      .maincontent
+      //- .maincontent
         //- +image('content/user.jpg', 'user-pic')
         //- +icon('link', 'link-class')
         //- .icon-bg
-      .welcome-section
+      .welcome-parallax
+        .welcome__layer(data-speed="0.1")
+          +image('content/hero/bg/bg_sky.jpg', 'welcome__image')
+        .welcome__layer(data-speed="0.2")
+          +image('content/hero/bg/bg_mountain-p.png', 'welcome__image')
+        .welcome__layer(data-speed="0.25")
+          +image('content/hero/bg/bg_bridge-p.png', 'welcome__image')
+        .welcome__layer(data-speed="0.35")
+          +image('content/hero/bg/bg_glade_gradient-p.png', 'welcome__image')
+          
         section.hero 
           .container.hero__container
             header.hero__header
@@ -35,6 +44,12 @@ html(lang="en")
                     li.social__item
                       a.social__link(href="")
                         +icon(item, "social__icon")
+
+              .hamburger
+                +image('content/hero/hamburger.png', 'hamburger__link--pic')
+                
+
+
               
             .hero__content
               .user-info
@@ -46,7 +61,7 @@ html(lang="en")
                 .scroll__text Скролл
                 .scroll__link
                   +icon("scroll", "scroll__icon") 
-
+                  
         section.about 
           .container
             .about__container
@@ -72,7 +87,7 @@ html(lang="en")
                     ul.user__desc-value
                       - 
                         var items = [
-                          "Нижний Новгород",
+                          "Н.Новгород",
                           "25 лет",
                           "31 июля 1994"
                         ];
@@ -86,7 +101,7 @@ html(lang="en")
                 h2.about__title Александр Мельник
                 p.about__desc Я занимаюсь разработкой современных сайтов и приложений. Мне нравится делать интересные и современные проекты.
                 p.about__text Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите, как тут всё классно и красиво!
-       
+      
        
       section.skill
         .container.skill__container
@@ -203,7 +218,7 @@ html(lang="en")
                       .input__pic
                         +icon("user", "input__pic-icon")
                       .input
-                        input.form__input(type="text" name="name" placeholder="Мельник Александр" required)
+                        input.form__input.form__input-name(type="text" name="name" placeholder="Мельник Александр" required)
 
                   label.form__block 
                     .form__label Введите ваш email

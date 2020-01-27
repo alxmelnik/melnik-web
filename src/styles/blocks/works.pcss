@@ -2,7 +2,11 @@
   min-height: 1085px;
   display: flex;
   flex-direction: column;
-  justify-content: center
+  justify-content: center;
+
+  @include phones {
+    min-height: 800px;
+  }
 }
 
 .works__container {
@@ -13,4 +17,20 @@
   font-size: 36px;
   font-weight: 700;
   margin-bottom: 92px;
+
+  @include desktop {
+    margin-bottom: 62px;
+  }
+
+  @include tablets {
+    font-size: 30px;
+    margin-bottom: 54px;
+  }
+
+  @include phones {
+    font-size: 24px;
+    text-align: center;
+    margin-bottom: 30px;
+  }
+
 }

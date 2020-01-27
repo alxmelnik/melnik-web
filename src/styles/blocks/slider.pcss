@@ -1,12 +1,35 @@
 .slider {
   display: flex;
   justify-content: space-between;
+
+  @include tablets {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  @include phones {
+    align-items: stretch;
+  }
 }
 
 .slider__display {
-  width: 975px;
-  height: 550px;
+  max-width: 975px;
+  max-height: 550px;
   position: relative;
+
+  @include desktop {
+    max-width: 622px;
+    max-height: 353px;
+  }
+
+  @include tablets {
+    margin-bottom: 61px;
+  }
+
+  @include phones {
+    max-width: 328px;
+    max-height: 184px;
+  }
 
 }
 
@@ -15,18 +38,35 @@
   position: absolute;
   top: 70%;
   right: 0;
+
+  @include desktop {
+    top: 63%;
+    right: 0;
+  }
+
+  @include phones {
+    display: none;
+  }
+
 }
 
 
 .slider__thumbs {
   display: flex;
   position: relative;
+
 }
 
 .slider__item {
   width: 178px;
   height: 100px;
   border: 0px solid transparent;
+
+  @include desktop {
+    &:last-child {
+      display: none;
+    }
+  }
 }
 
 .slider__item:hover {
@@ -40,6 +80,15 @@
   position: absolute;
   top: 70%;
   right: -50px;
+
+  @include desktop {
+    top: 63%;
+  }
+
+  @include phones {
+    top: 42%;
+    right: 0;
+  }
 
 }
 
@@ -57,7 +106,7 @@
 .direction-btn:hover {
   background-color: #dc9322;
 
-  & .direction__icon{
+  & .direction__icon {
     fill: white;
   }
 
@@ -73,17 +122,34 @@
 
 
 .direction__icon--prev {
-transform: rotate(180deg);
+  transform: rotate(180deg);
 }
 
 
 .slider__info {
   max-width: 337px;
+
+  @include tablets {
+    max-width: 440px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+
+    @include phones {
+      align-items: flex-start;
+    }
+  }
+
 }
 
 
 .slider-tags {
   margin-bottom: 50px;
+
+  @include tablets {
+    margin-bottom: 30px;
+  }
 }
 
 .slider-tags__list {
@@ -94,7 +160,7 @@ transform: rotate(180deg);
   font-size: 15px;
   font-weight: 600;
   color: rgba(47, 54, 66, 0.7);
-  background-color:rgb(243, 245, 249);
+  background-color: rgb(243, 245, 249);
   border-radius: 22px;
   padding: 15px 20px;
   margin-right: 10px;
@@ -102,10 +168,30 @@ transform: rotate(180deg);
   &:last-child {
     margin-right: 0;
   }
+
+  @include tablets {
+    margin-right: 15px;
+  }
+
+  @include phones {
+    font-size: 13px;
+    margin-right: 12px;
+  }
+
 }
 
 .slider__info-text {
   margin-bottom: 50px;
+
+  @include tablets {
+    margin-bottom: 32px;
+  }
+
+  @include phones {
+    margin-bottom: 38px;
+    text-align: left;
+  }
+
 }
 
 .slider__info-title {
@@ -113,6 +199,19 @@ transform: rotate(180deg);
   font-weight: 700;
   line-height: 1.6;
   margin-bottom: 44px;
+
+  @include tablets {
+    margin-bottom: 30px;
+    
+  }
+
+  @include phones {
+    max-width: 250px;
+    font-size: 24px;
+    line-height: 1.25;
+    margin-bottom: 21px;
+  }
+
 }
 
 .slider__info-message {
@@ -120,6 +219,15 @@ transform: rotate(180deg);
   font-weight: 600;
   line-height: 1.88;
   opacity: 0.7;
+
+  @include tablets {
+    font-size: 14px;
+    line-height: 1.71;
+  }
+
+  @include phones {
+   max-width: 250px;
+  }
 }
 
 .slider__info-link {
@@ -128,8 +236,24 @@ transform: rotate(180deg);
   color: #586ed3;
   display: flex;
   align-items: center;
+
+  @include tablets {
+    font-size: 14px;
+  }
+
 }
 
+.slider__info-link:hover {
+  color: #dc9322;
+  transition: 0.3s;
+
+  & .info-link__icon {
+    fill: #dc9322;
+    transition: 0.3s;
+    
+  }
+  
+}
 
 .info-link__pic {
   padding-right: 20px;
