@@ -15,6 +15,7 @@
     align-items: flex-start;
     padding-top: 15%;
   }
+
   @include phones {
     min-height: 1312px;
     align-items: flex-start;
@@ -113,13 +114,15 @@
     max-width: 430px;
     margin-left: 0%;
   }
+
   @include phones {
     max-width: 100%;
   }
 }
 
 
-.skill-row {
+// .skill-row 
+.skill-graphic__item {
   margin-bottom: 50px;
 
   &:last-child {
@@ -133,6 +136,14 @@
     margin-bottom: 63px;
   }
 
+}
+
+.skill-row {
+  @include tablets {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 }
 
 
@@ -185,6 +196,9 @@
     margin-bottom: 27px;
     width: 46%;
 
+    display: flex;
+    justify-content: center;
+
   }
 
 
@@ -192,11 +206,12 @@
 
 .skill__box {
   position: relative;
+  text-align: center;
 }
 
 .skill__box-title {
   font-size: 18px;
-  font-weight: 800;
+  font-weight: 700;
   opacity: 0.5;
 
   position: absolute;
@@ -224,16 +239,15 @@
 
 .skill__box-circle--under {
   stroke: #393939;
-  stroke-width: 5px;
+  stroke-width: 3px;
   fill: none;
 
 }
 
 .skill__box-circle--above {
-  stroke: #dc9322;
-  stroke-width: 9px;
+  stroke-width: 6px;
   fill: none;
-  stroke-dasharray: 334;
+  stroke-dasharray: 251;
   stroke-dashoffset: 0;
 
 }

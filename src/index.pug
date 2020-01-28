@@ -109,27 +109,9 @@ html(lang="en")
             h2.skill__title-text Чем я могу быть полезен вам
             p.skill__title-desc  Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите, как тут всё классно и красиво!
 
-          .skill__content
-            -
-              var skills = [
-                ["Front-end", ["HTML5","CSS3","javascript","Vue.js"]],
-                ["Workflow", ["GIT","Terminal","Gulp","Webpack"]],
-              ];
-
-            ul.skill-graphic
-              each row in skills  
-                li.skill-graphic__item.skill-row
-                    .skill-row__title #{row[0]}
-                    .skill-row__content 
-                      ul.skill__items
-                        each item in row[1]
-                          li.skill__item
-                            .skill__box
-                              .skill__box-title #{item}
-                              svg(viewBox="0 0 200 200" preserveAspectRatio="none").skill__box-shape
-                                circle(cx="100" cy="100" r="90").skill__box-circle--under
-                                circle(cx="100" cy="100" r="90").skill__box-circle--above
-    
+          .skill__widget
+            #skills-component
+            
       section.works
         .container.works__container
           h2.works__title Мои работы
@@ -274,7 +256,7 @@ html(lang="en")
                   p.foot__quote-text Всегда пишите код так, будто сопровождать его будет склонный к насилию психопат, который знает где вы живете
                   span.foot__quote-author Martin Golding
 
-
+    include ./templates/entry.pug
 
 
 
