@@ -15,8 +15,8 @@ new Vue({
         initialIndex: 3,
         prevNextButtons: false,
         pageDots: false,
-        wrapAround: true,
-        groupCells: 2,
+        wrapAround: false,
+        groupCells: "100%",
         cellAlign: 'left'
 
         // any options from Flickity can be used
