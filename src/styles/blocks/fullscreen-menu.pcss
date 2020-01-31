@@ -1,0 +1,100 @@
+.fullscreen-menu {
+  // height: 100vh;
+  // min-height: 815px;
+
+  background-image: url('~images/content/reviews/bg/bg_reviews.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  display: none;
+
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 10000;
+
+}
+
+.fullscreen-menu__container {
+  display: flex;
+  justify-content: space-between;
+  height: 100%;
+  width: 100%;
+}
+
+.fullscreen-menu__left {
+  width: 55%;
+
+  @include phones {
+    display: none;
+  }
+}
+
+.fullscreen-menu__logo {
+  color: #fff;
+  display: flex;
+  padding: 15% 5% ;
+}
+
+
+
+.fullscreen-menu__right {
+  width: 45%;
+  height: 100%;
+  background-color: #fff;
+  padding-left: 67px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+
+  @include phones {
+    width: 100%;
+  }
+}
+
+
+.fullscreen-menu__close {
+  position: absolute;
+  top: 70px;
+  right: 45px;
+  display: flex;
+  align-items: center;
+}
+
+
+.fullscreen-menu__close-icon {
+  fill: #414c63;
+  width: 20px;
+  height: 20px;
+
+ &:hover {
+    fill: #f89513; 
+    transform: scale(1.2);
+    transition: 0.3s;
+   }
+}
+
+
+
+.fullscreen-menu__nav {
+  margin-bottom: 60px;
+}
+
+.fullscreen-menu__list {
+  color: #414c63;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 2.67;
+
+}
+
+.fullscreen-menu__link:hover {
+  color: #f89513; 
+ transition: 0.3s;
+}

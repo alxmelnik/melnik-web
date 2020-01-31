@@ -4,5 +4,6 @@ if (process.env.NODE_ENV === "development") {
 }
 
 import "./scripts/welcome-parallax";
+import "./scripts/fullscreen-menu";
 import "./scripts/skills";
 import "./scripts/reviews";

@@ -9,254 +9,292 @@ html(lang="en")
     title Мельник Александр | Главная страница
   body
     .wrapper
-      //- .maincontent
-        //- +image('content/user.jpg', 'user-pic')
-        //- +icon('link', 'link-class')
-        //- .icon-bg
-      .welcome-parallax
-        .welcome__layer(data-speed="0.1")
-          +image('content/hero/bg/bg_sky.jpg', 'welcome__image')
-        .welcome__layer(data-speed="0.2")
-          +image('content/hero/bg/bg_mountain-p.png', 'welcome__image')
-        .welcome__layer(data-speed="0.25")
-          +image('content/hero/bg/bg_bridge-p.png', 'welcome__image')
-        .welcome__layer(data-speed="0.35")
-          +image('content/hero/bg/bg_glade_gradient-p.png', 'welcome__image')
-          
-        section.hero 
-          .container.hero__container
-            header.hero__header
-              .hero__logo 
-                .logo АМ
-                
-              .hero__menu
-                nav.nav
-                  - var menu = ["Главная", "Обо мне", "Навыки", "Работы", "Отзывы", "Связаться"]
-                  ul.nav__list
-                    each item in menu
-                      li.nav__item
-                        a.nav__link(href="#") #{item}
+      .wrapper__content
 
-              .hero__social
-                - var icons = ["insta", "vk", "github"]
-                ul.social__list
-                  each item in icons
-                    li.social__item
-                      a.social__link(href="")
-                        +icon(item, "social__icon")
-
-              .hamburger
-                +image('content/hero/hamburger.png', 'hamburger__link--pic')
-                
-
-
-              
-            .hero__content
-              .user-info
-                h1.user-info__desc Личный сайт <br> веб разработчика
-                .user-info__username Александр Мельник
-
-            .hero__buttons
-              a.btn__scroll
-                .scroll__text Скролл
-                .scroll__link
-                  +icon("scroll", "scroll__icon") 
+        //- .maincontent
+          //- +image('content/user.jpg', 'user-pic')
+          //- +icon('link', 'link-class')
+          //- .icon-bg
+        .welcome-parallax
+          .welcome__layer(data-speed="0.1")
+            +image('content/hero/bg/bg_sky.jpg', 'welcome__image')
+          .welcome__layer(data-speed="0.2")
+            +image('content/hero/bg/bg_mountain-p.png', 'welcome__image')
+          .welcome__layer(data-speed="0.25")
+            +image('content/hero/bg/bg_bridge-p.png', 'welcome__image')
+          .welcome__layer(data-speed="0.35")
+            +image('content/hero/bg/bg_glade_gradient-p.png', 'welcome__image')
+            
+          section.hero 
+            .container.hero__container
+              header.hero__header
+                .hero__logo 
+                  .logo АМ
                   
-        section.about 
-          .container
-            .about__container
-              .about__left
-                .about__user
-                  .user__avatar
-                    .avatar
-                      +image('content/about/user_am.jpg', 'avatar__image')
+                .hero__menu
+                  nav.nav
+                    - var menu = ["Главная", "Обо мне", "Навыки", "Работы", "Отзывы", "Связаться"]
+                    ul.nav__list
+                      each item in menu
+                        li.nav__item
+                          a.nav__link(href="#") #{item}
 
-                  .user__desc
-                    ul.user__desc-feature
-                      - 
-                        var items = [
-                          'Проживаю:',
-                          'Возраст:',
-                          'Родился:'
-                        ];
-                      each item in items
-                        li.user__desc-item
-                          .user__key #{item}
+                .hero__social
+                  - var icons = ["insta", "vk", "github"]
+                  ul.social__list
+                    each item in icons
+                      li.social__item
+                        a.social__link(href="")
+                          +icon(item, "social__icon")
+
+                .hamburger
+                  +image('content/hero/hamburger.png', 'hamburger__link--pic')
+                  
+
+
+                
+              .hero__content
+                .user-info
+                  h1.user-info__desc Личный сайт <br> веб разработчика
+                  .user-info__username Александр Мельник
+
+              .hero__buttons
+                a.btn__scroll
+                  .scroll__text Скролл
+                  .scroll__link
+                    +icon("scroll", "scroll__icon") 
+                    
+          section.about 
+            .container
+              .about__container
+                .about__left
+                  .about__user
+                    .user__avatar
+                      .avatar
+                        +image('content/about/user_am.jpg', 'avatar__image')
+
+                    .user__desc
+                      ul.user__desc-feature
+                        - 
+                          var items = [
+                            'Проживаю:',
+                            'Возраст:',
+                            'Родился:'
+                          ];
+                        each item in items
+                          li.user__desc-item
+                            .user__key #{item}
+                            
+
+                      ul.user__desc-value
+                        - 
+                          var items = [
+                            "Н.Новгород",
+                            "25 лет",
+                            "31 июля 1994"
+                          ];
+                        each item in items
+                          li.user__desc-item
+                            .user__value #{item}
+
+
+                .about__right
+                  h4.about__subtitle Привет, меня зовут
+                  h2.about__title Александр Мельник
+                  p.about__desc Я занимаюсь разработкой современных сайтов и приложений. Мне нравится делать интересные и современные проекты.
+                  p.about__text Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите, как тут всё классно и красиво!
+        
+        
+        section.skill
+          .container.skill__container
+            .skill__title
+              h2.skill__title-text Чем я могу быть полезен вам
+              p.skill__title-desc  Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите, как тут всё классно и красиво!
+
+            .skill__widget
+              #skills-component
+              
+        section.works
+          .container.works__container
+            h2.works__title Мои работы
+              
+            .works__content
+              .slider
+                .slider__display
+                  +image('content/works/slide_one_big.jpg', 'slider__display-pic')
+                  .slider__display-thumbs
+                    ul.slider__thumbs
+                      li.slider__item
+                        a.slider__link(href="")
+                          +image('content/works/slide_one_small.jpg', 'slider__link-pic')
+                      li.slider__item
+                        a.slider__link(href="")
+                          +image('content/works/slide_two_small.jpg', 'slider__link-pic')
+                      li.slider__item
+                        a.slider__link(href="")
+                          +image('content/works/slide_three_small.jpg', 'slider__link-pic')
+                      li.slider__item
+                        a.slider__link(href="")
+                          +image('content/works/slide_four_small.jpg', 'slider__link-pic')
+
+                  .slider__btn
+                    a.direction-btn.direction-btn--next
+                      +icon("arrow-down", "direction__icon")
+                    a.direction-btn.direction-btn--prev
+                      +icon("arrow-down", "direction__icon direction__icon--prev")
                           
 
-                    ul.user__desc-value
-                      - 
-                        var items = [
-                          "Н.Новгород",
-                          "25 лет",
-                          "31 июля 1994"
-                        ];
-                      each item in items
-                        li.user__desc-item
-                          .user__value #{item}
+                .slider__info
+                  .slider-tags
+                    ul.slider-tags__list
+                      li.slider-tags__item HTML
+                      li.slider-tags__item CSS
+                      li.slider-tags__item javascript
+                  
+                  .slider__info-text
+                    h3.slider__info-title Сайт школы образования
+                    p.slider__info-message Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 2 месяца только самых тяжелых испытаний и бессонных ночей!
 
+                  .slider__info-btn
+                    a.slider__info-link 
+                      .info-link__pic
+                        +icon("link", "info-link__icon")
+                      .info-link__text Посмотреть сайт
 
-              .about__right
-                h4.about__subtitle Привет, меня зовут
-                h2.about__title Александр Мельник
-                p.about__desc Я занимаюсь разработкой современных сайтов и приложений. Мне нравится делать интересные и современные проекты.
-                p.about__text Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите, как тут всё классно и красиво!
+        .contact-wrapper
+          .container.contact__container
+            section.reviews 
+              #reviews-component
+
+                //- h2.reviews__title Что обо мне говорят
+                //- .reviews__slider
+                //-   .reviews__btn
+                //-     a.arrow-btn.arrow-btn--prev
+                //-       +icon("arrow-down", "arrow__icon arrow__icon--prev")
+                //-     a.arrow-btn.arrow-btn--next
+                //-       +icon("arrow-down", "arrow__icon arrow__icon--next")
+                //-   ul.reviews__desc
+                //-     li.reviews__item
+                //-       .reviews__message 
+                //-         p Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 4,5 месяца только самых тяжелых испытаний и бессонных ночей!
+                //-       .reviews__author 
+                //-         .reviews__avatar
+                //-           +image('content/reviews/kovalchuk.jpg', 'reviews__avatar-pic')
+                //-         .reviews__author-info 
+                //-           h4.reviews__author-title Ковальчук Дмитрий
+                //-           span.reviews__author-desc Основатель Loftschool
+                //-     li.reviews__item
+                //-       .reviews__message 
+                //-         p Этот код выдержит любые испытания. Только пожалуйста, не загружайте сайт на слишком старых браузерах
+                //-       .reviews__author 
+                //-         .reviews__avatar
+                //-           +image('content/reviews/sabancev.jpg', 'reviews__avatar-pic')
+                //-         .reviews__author-info 
+                //-           h4.reviews__author-title Владимир Сабанцев
+                //-           span.reviews__author-desc Преподаватель
+
+            section.contact
+              h2.contact__title Связаться со мной
+              .form
+                form.form__tag(action="")
+                  .form__row.form__row--double
+                    label.form__block
+                      .form__label Введите ваше имя
+                      .form-in
+                        .input__pic
+                          +icon("user", "input__pic-icon")
+                        .input
+                          input.form__input.form__input-name(type="text" name="name" placeholder="Мельник Александр" required)
+
+                    label.form__block 
+                      .form__label Введите ваш email
+                      .form-in
+                        .input__pic
+                          +icon("envelope", "input__pic-icon")
+                        .input
+                          input.form__input(type="text" name="email" placeholder="alxmelnik@yandex.ru" required)
+                        
+                  .form__row
+                    label.form__block
+                      .form__label Сообщение к письму
+                      .form-in
+                        .input__pic
+                          +icon("message", "input__pic-icon")
+                        .input
+                          textarea.form__input.form__input--textarea(type="text" name="comment" placeholder="Требуется ваша помощь в создании сайта. Интересуют сроки и цена вопроса" required)
+
+                  .form__row-btn
+                    button.form__btn(type="submit" value="Отправить") Отправить
+
+        section.footer
+          .container.footer__container
+            footer.foot
+              .foot__left 
+                .foot__left-copy © 2020
+                .foot__left-desc
+                  h4.foot__left-username Александр Мельник
+                  h5.foot__left-text Личный сайт веб- разработчика
+
+              .foot__right
+                .foot__menu
+                  nav.nav
+                    - var menu = ["Главная", "Обо мне", "Навыки", "Работы", "Отзывы", "Связаться"]
+                    ul.nav__list
+                      each item in menu
+                        li.nav__item
+                          a.nav__link(href="#") #{item}
+
+                .foot__inner
+                  .foot__social-desc
+                    .foot__social-text Этот сайт я сделал в рамках обучения в Школе онлайн образования Loftschool
+                    .foot__social
+                      - var icons = ["insta", "vk", "github"]
+                      ul.social__list
+                        each item in icons
+                          li.social__item.social__item-footer
+                            a.social__link(href="")
+                              +icon(item, "social__icon social__icon-footer")
+                  
+                  .foot__quote
+                    p.foot__quote-text Всегда пишите код так, будто сопровождать его будет склонный к насилию психопат, который знает где вы живете
+                    span.foot__quote-author Martin Golding
+
+    .fullscreen-menu
       
-       
-      section.skill
-        .container.skill__container
-          .skill__title
-            h2.skill__title-text Чем я могу быть полезен вам
-            p.skill__title-desc  Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите, как тут всё классно и красиво!
 
-          .skill__widget
-            #skills-component
-            
-      section.works
-        .container.works__container
-          h2.works__title Мои работы
-            
-          .works__content
-            .slider
-              .slider__display
-                +image('content/works/slide_one_big.jpg', 'slider__display-pic')
-                .slider__display-thumbs
-                  ul.slider__thumbs
-                    li.slider__item
-                      a.slider__link(href="")
-                        +image('content/works/slide_one_small.jpg', 'slider__link-pic')
-                    li.slider__item
-                      a.slider__link(href="")
-                        +image('content/works/slide_two_small.jpg', 'slider__link-pic')
-                    li.slider__item
-                      a.slider__link(href="")
-                        +image('content/works/slide_three_small.jpg', 'slider__link-pic')
-                    li.slider__item
-                      a.slider__link(href="")
-                        +image('content/works/slide_four_small.jpg', 'slider__link-pic')
+        .fullscreen-menu__left
+          .hero__logo.fullscreen-menu__logo 
+            .logo АМ
 
-                .slider__btn
-                  a.direction-btn.direction-btn--next
-                    +icon("arrow-down", "direction__icon")
-                  a.direction-btn.direction-btn--prev
-                    +icon("arrow-down", "direction__icon direction__icon--prev")
-                         
+        .fullscreen-menu__right
 
-              .slider__info
-                .slider-tags
-                  ul.slider-tags__list
-                    li.slider-tags__item HTML
-                    li.slider-tags__item CSS
-                    li.slider-tags__item javascript
-                
-                .slider__info-text
-                  h3.slider__info-title Сайт школы образования
-                  p.slider__info-message Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 2 месяца только самых тяжелых испытаний и бессонных ночей!
+          a.fullscreen-menu__close(href="")
+            +icon("remove", 'fullscreen-menu__close-icon')
 
-                .slider__info-btn
-                  a.slider__info-link 
-                    .info-link__pic
-                      +icon("link", "info-link__icon")
-                    .info-link__text Посмотреть сайт
+          nav.fullscreen-menu__nav
+            ul.fullscreen-menu__list
+              li.fullscreen-menu__item
+                a.fullscreen-menu__link(href="#main") Главная
+              li.fullscreen-menu__item
+                a.fullscreen-menu__link(href="#main") Обо мне
+              li.fullscreen-menu__item
+                a.fullscreen-menu__link(href="#main") Навыки
+              li.fullscreen-menu__item
+                a.fullscreen-menu__link(href="#main") Работы
+              li.fullscreen-menu__item
+                a.fullscreen-menu__link(href="#main") Отзывы
+              li.fullscreen-menu__item
+                a.fullscreen-menu__link(href="#main") Связаться
 
-      .contact-wrapper
-        .container.contact__container
-          section.reviews 
-            #reviews-component
-
-              //- h2.reviews__title Что обо мне говорят
-              //- .reviews__slider
-              //-   .reviews__btn
-              //-     a.arrow-btn.arrow-btn--prev
-              //-       +icon("arrow-down", "arrow__icon arrow__icon--prev")
-              //-     a.arrow-btn.arrow-btn--next
-              //-       +icon("arrow-down", "arrow__icon arrow__icon--next")
-              //-   ul.reviews__desc
-              //-     li.reviews__item
-              //-       .reviews__message 
-              //-         p Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 4,5 месяца только самых тяжелых испытаний и бессонных ночей!
-              //-       .reviews__author 
-              //-         .reviews__avatar
-              //-           +image('content/reviews/kovalchuk.jpg', 'reviews__avatar-pic')
-              //-         .reviews__author-info 
-              //-           h4.reviews__author-title Ковальчук Дмитрий
-              //-           span.reviews__author-desc Основатель Loftschool
-              //-     li.reviews__item
-              //-       .reviews__message 
-              //-         p Этот код выдержит любые испытания. Только пожалуйста, не загружайте сайт на слишком старых браузерах
-              //-       .reviews__author 
-              //-         .reviews__avatar
-              //-           +image('content/reviews/sabancev.jpg', 'reviews__avatar-pic')
-              //-         .reviews__author-info 
-              //-           h4.reviews__author-title Владимир Сабанцев
-              //-           span.reviews__author-desc Преподаватель
-
-          section.contact
-            h2.contact__title Связаться со мной
-            .form
-              form.form__tag(action="")
-                .form__row.form__row--double
-                  label.form__block
-                    .form__label Введите ваше имя
-                    .form-in
-                      .input__pic
-                        +icon("user", "input__pic-icon")
-                      .input
-                        input.form__input.form__input-name(type="text" name="name" placeholder="Мельник Александр" required)
-
-                  label.form__block 
-                    .form__label Введите ваш email
-                    .form-in
-                      .input__pic
-                        +icon("envelope", "input__pic-icon")
-                      .input
-                        input.form__input(type="text" name="email" placeholder="alxmelnik@yandex.ru" required)
-                      
-                .form__row
-                  label.form__block
-                    .form__label Сообщение к письму
-                    .form-in
-                      .input__pic
-                        +icon("message", "input__pic-icon")
-                      .input
-                        textarea.form__input.form__input--textarea(type="text" name="comment" placeholder="Требуется ваша помощь в создании сайта. Интересуют сроки и цена вопроса" required)
-
-                .form__row-btn
-                  button.form__btn(type="submit" value="Отправить") Отправить
+          .fullscreen-menu__social
+              - var icons = ["insta", "vk", "github"]
+              ul.social__list
+                each item in icons
+                  li.social__item
+                    a.social__link(href="")
+                      +icon(item, "social__icon social__icon--popup")
 
 
-      section.footer
-        .container.footer__container
-          footer.foot
-            .foot__left 
-              .foot__left-copy © 2020
-              .foot__left-desc
-                h4.foot__left-username Александр Мельник
-                h5.foot__left-text Личный сайт веб- разработчика
-
-            .foot__right
-              .foot__menu
-                nav.nav
-                  - var menu = ["Главная", "Обо мне", "Навыки", "Работы", "Отзывы", "Связаться"]
-                  ul.nav__list
-                    each item in menu
-                      li.nav__item
-                        a.nav__link(href="#") #{item}
-
-              .foot__inner
-                .foot__social-desc
-                  .foot__social-text Этот сайт я сделал в рамках обучения в Школе онлайн образования Loftschool
-                  .foot__social
-                    - var icons = ["insta", "vk", "github"]
-                    ul.social__list
-                      each item in icons
-                        li.social__item.social__item-footer
-                          a.social__link(href="")
-                            +icon(item, "social__icon social__icon-footer")
-                
-                .foot__quote
-                  p.foot__quote-text Всегда пишите код так, будто сопровождать его будет склонный к насилию психопат, который знает где вы живете
-                  span.foot__quote-author Martin Golding
 
     include ./templates/entry.pug
 
