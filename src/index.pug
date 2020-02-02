@@ -119,47 +119,47 @@ html(lang="en")
             h2.works__title Мои работы
               
             .works__content
-              .slider
-                .slider__display
-                  +image('content/works/slide_one_big.jpg', 'slider__display-pic')
-                  .slider__display-thumbs
-                    ul.slider__thumbs
-                      li.slider__item
-                        a.slider__link(href="")
-                          +image('content/works/slide_one_small.jpg', 'slider__link-pic')
-                      li.slider__item
-                        a.slider__link(href="")
-                          +image('content/works/slide_two_small.jpg', 'slider__link-pic')
-                      li.slider__item
-                        a.slider__link(href="")
-                          +image('content/works/slide_three_small.jpg', 'slider__link-pic')
-                      li.slider__item
-                        a.slider__link(href="")
-                          +image('content/works/slide_four_small.jpg', 'slider__link-pic')
+              #slider-component
+              //- .slider
+              //-   .slider__display
+              //-     +image('content/works/slide_1.jpg', 'slider__display-pic')
+              //-     .slider__display-thumbs
+              //-       ul.slider__thumbs
+              //-         li.slider__item.active
+              //-           a.slider__link(href="")
+              //-             +image('content/works/slide_1.jpg', 'slider__link-pic')
+              //-         li.slider__item
+              //-           a.slider__link(href="")
+              //-             +image('content/works/slide_2.jpg', 'slider__link-pic')
+              //-         li.slider__item
+              //-           a.slider__link(href="")
+              //-             +image('content/works/slide_3.jpg', 'slider__link-pic')
+              //-         li.slider__item
+              //-           a.slider__link(href="")
+              //-             +image('content/works/slide_4.jpg', 'slider__link-pic')
 
-                  .slider__btn
-                    a.direction-btn.direction-btn--next
-                      +icon("arrow-down", "direction__icon")
-                    a.direction-btn.direction-btn--prev
-                      +icon("arrow-down", "direction__icon direction__icon--prev")
-                          
-
-                .slider__info
-                  .slider-tags
-                    ul.slider-tags__list
-                      li.slider-tags__item HTML
-                      li.slider-tags__item CSS
-                      li.slider-tags__item javascript
+              //-     .slider__btn
+              //-       button.direction-btn.direction-btn--next
+              //-         +icon("arrow-down", "direction__icon")
+              //-       button.direction-btn.direction-btn--prev
+              //-         +icon("arrow-down", "direction__icon direction__icon--prev")
+                      
+              //-   .slider__info
+              //-     .slider-tags
+              //-       ul.slider-tags__list
+              //-         li.slider-tags__item HTML
+              //-         li.slider-tags__item CSS
+              //-         li.slider-tags__item javascript
                   
-                  .slider__info-text
-                    h3.slider__info-title Сайт школы образования
-                    p.slider__info-message Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 2 месяца только самых тяжелых испытаний и бессонных ночей!
+              //-     .slider__info-text
+              //-       h3.slider__info-title Сайт школы образования
+              //-       p.slider__info-message Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 2 месяца только самых тяжелых испытаний и бессонных ночей!
 
-                  .slider__info-btn
-                    a.slider__info-link 
-                      .info-link__pic
-                        +icon("link", "info-link__icon")
-                      .info-link__text Посмотреть сайт
+              //-     .slider__info-btn
+              //-       a.slider__info-link 
+              //-         .info-link__pic
+              //-           +icon("link", "info-link__icon")
+              //-         .info-link__text Посмотреть сайт
 
         .contact-wrapper
           .container.contact__container
@@ -260,39 +260,37 @@ html(lang="en")
                     span.foot__quote-author Martin Golding
 
     .fullscreen-menu
-      
+      .fullscreen-menu__left
+        .hero__logo.fullscreen-menu__logo 
+          .logo АМ
 
-        .fullscreen-menu__left
-          .hero__logo.fullscreen-menu__logo 
-            .logo АМ
+      .fullscreen-menu__right
 
-        .fullscreen-menu__right
+        a.fullscreen-menu__close(href="")
+          +icon("remove", 'fullscreen-menu__close-icon')
 
-          a.fullscreen-menu__close(href="")
-            +icon("remove", 'fullscreen-menu__close-icon')
+        nav.fullscreen-menu__nav
+          ul.fullscreen-menu__list
+            li.fullscreen-menu__item
+              a.fullscreen-menu__link(href="#main") Главная
+            li.fullscreen-menu__item
+              a.fullscreen-menu__link(href="#main") Обо мне
+            li.fullscreen-menu__item
+              a.fullscreen-menu__link(href="#main") Навыки
+            li.fullscreen-menu__item
+              a.fullscreen-menu__link(href="#main") Работы
+            li.fullscreen-menu__item
+              a.fullscreen-menu__link(href="#main") Отзывы
+            li.fullscreen-menu__item
+              a.fullscreen-menu__link(href="#main") Связаться
 
-          nav.fullscreen-menu__nav
-            ul.fullscreen-menu__list
-              li.fullscreen-menu__item
-                a.fullscreen-menu__link(href="#main") Главная
-              li.fullscreen-menu__item
-                a.fullscreen-menu__link(href="#main") Обо мне
-              li.fullscreen-menu__item
-                a.fullscreen-menu__link(href="#main") Навыки
-              li.fullscreen-menu__item
-                a.fullscreen-menu__link(href="#main") Работы
-              li.fullscreen-menu__item
-                a.fullscreen-menu__link(href="#main") Отзывы
-              li.fullscreen-menu__item
-                a.fullscreen-menu__link(href="#main") Связаться
-
-          .fullscreen-menu__social
-              - var icons = ["insta", "vk", "github"]
-              ul.social__list
-                each item in icons
-                  li.social__item
-                    a.social__link(href="")
-                      +icon(item, "social__icon social__icon--popup")
+        .fullscreen-menu__social
+            - var icons = ["insta", "vk", "github"]
+            ul.social__list
+              each item in icons
+                li.social__item
+                  a.social__link(href="")
+                    +icon(item, "social__icon social__icon--popup")
 
 
 
