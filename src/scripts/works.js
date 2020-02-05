@@ -80,6 +80,8 @@ new Vue ({
           this.currentIndex--;
           break;
       }
+
+      
       console.log(direction);
       // this.emit("slide", direction)
     },
