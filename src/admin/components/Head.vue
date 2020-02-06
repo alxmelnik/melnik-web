@@ -16,16 +16,16 @@
 
 <script>
 export default {
-  name: 'Head'
+  name: "Head"
 };
 </script>
 
 
 <style lang="postcss" scoped>
-@import url("https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800");
-@import "normalize.css";
+/* @import url("https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800");
+@import "normalize.css"; */
 @import url("../../styles/mixins.pcss");
-@import url("../../styles/layout/base.pcss");
+/* @import url("../../styles/layout/base.pcss"); */
 
 .head {
   min-height: 80px;
@@ -47,6 +47,10 @@ export default {
   border-radius: 50%;
   overflow: hidden;
   margin-right: 20px;
+
+  @include phones {
+    margin-right: 20px;
+  }
 }
 
 .head__user-pic {
@@ -59,14 +63,22 @@ export default {
   display: flex;
   align-items: center;
   flex: 1;
+
+  @include phones {
+    flex-direction: column;
+    align-items: flex-start;
+  }
 }
 
 .head__user-name {
   font-size: 18px;
   font-weight: 600;
-  text-transform: uppercase;
   line-height: 1.89;
   margin-right: 28px;
+
+  @include phones {
+    font-size: 16px;
+  }
 }
 
 .head__title {
@@ -74,10 +86,17 @@ export default {
   font-weight: normal;
   opacity: 0.5;
   line-height: 2.43;
+
+  @include phones {
+    display: none;
+  }
 }
 
 .head__exit {
   margin-left: auto;
+  @include phones {
+    margin-left: 0;
+  }
 }
 
 .head__exit--link {
@@ -86,7 +105,9 @@ export default {
   opacity: 0.7;
   line-height: 1.5;
   text-decoration: underline;
+
+  @include phones {
+    font-size: 14px;
+  }
 }
-
-
 </style>

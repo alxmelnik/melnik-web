@@ -9,6 +9,9 @@
 
   .maincontent
     Works
+
+  .maincontent
+    Reviews
                     
 </template>
 
@@ -17,13 +20,15 @@ import Head from "./components/Head";
 import Navigation from "./components/Navigation";
 import About from "./components/pages/about";
 import Works from "./components/pages/works";
+import Reviews from "./components/pages/reviews";
 
 export default {
   components: {
     Head,
     Navigation,
     About,
-    Works
+    Works,
+    Reviews
 
     
   }
@@ -39,6 +44,21 @@ export default {
 @import "normalize.css";
 @import url("../styles/mixins.pcss");
 @import url("../styles/layout/base.pcss");
+
+.container {
+  margin: 0 auto;
+  max-width: 1080px;
+  width: 95%;
+  
+  @include phones {
+    width: 85%;
+  }
+}
+
+.maincontent {
+  margin-bottom: 50px;
+}
+
 
 
 </style>

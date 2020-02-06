@@ -19,10 +19,10 @@ export default {
 
 
 <style lang="postcss" scoped>
-@import url("https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800");
-@import "normalize.css";
+/* @import url("https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800");
+@import "normalize.css"; */
 @import url("../../styles/mixins.pcss");
-@import url("../../styles/layout/base.pcss");
+/* @import url("../../styles/layout/base.pcss"); */
 
 /* Навигация  */
 
@@ -30,9 +30,15 @@ export default {
   min-height: 77px;
 }
 
+
+
 .nav__list {
   display: flex;
   align-items: center;
+
+   @include phones {
+    justify-content: center;
+  }
 }
 
 .nav__item {
@@ -41,6 +47,11 @@ export default {
   font-weight: normal;
   color: #2d3c4e;
   border-bottom: 3px solid transparent;
+
+  @include phones {
+    padding: 30px 18px;
+    font-size: 14px;
+  }
 }
 
 .nav__item.active {

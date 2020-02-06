@@ -74,10 +74,16 @@ new Vue ({
     handleSlide(direction){
       switch(direction) {
         case "next":
-          this.currentIndex++;
+          // this.currentIndex++;
+
+          this.currentIndex + 1 < this.works.length ? this.currentIndex++ : this.currentIndex;
+
           break;
         case "prev":
-          this.currentIndex--;
+          // this.currentIndex--;
+
+          this.currentIndex > 0 ? this.currentIndex-- : this.currentIndex;
+
           break;
       }
 

@@ -57,9 +57,57 @@
                   input.form__btn--reset(type="reset" value="Отмена")
                   button.form__btn(type="button" value="Сохранить") Сохранить 
 
+        .add__works
+          ul.works__list
+            li.works__item.works__item-first
+              .works__add
+                a.btn__add(href="#")
+                  .works__add-btn
+                  .works__add-text 
+                   span Добавить работу 
 
+            li.works__item
+              .works__add
+                .works__display
+                  img(src="~images/content/works/slide_1.jpg" alt="слайд" class="works__display-pic")
 
+                .works__desc
+                  .works__desc-title
+                    span Сайт школы образования
+                  .works__desc-text
+                    span Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 4,5 месяца только самых тяжелых испытаний и бессонных ночей!
+                  .works__desc-link
+                    a(href="http://loftschool.ru" target="_blank") http://loftschool.ru
 
+                  .works__desc-btn  
+                    button.works__btn-edit
+                      .btn-edit--text Править
+                      .btn-edit--icon.pen
+                    button.works__btn-delete  
+                      .btn-edit--text Удалить
+                      .btn-edit--icon.remove
+            li.works__item
+              .works__add
+                .works__display
+                  img(src="~images/content/works/slide_2.jpg" alt="слайд" class="works__display-pic")
+
+                .works__desc
+                  .works__desc-title
+                    span Сайт школы образования
+                  .works__desc-text
+                    span Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 4,5 месяца только самых тяжелых испытаний и бессонных ночей!
+                  .works__desc-link
+                    a(href="http://loftschool.ru" target="_blank") http://loftschool.ru
+
+                  .works__desc-btn  
+                    button.works__btn-edit
+                      .btn-edit--text Править
+                      .btn-edit--icon.pen
+                    button.works__btn-delete  
+                      .btn-edit--text Удалить
+                      .btn-edit--icon.remove
+                     
+       
 </template>
 
 
@@ -72,10 +120,10 @@ export default {
 
 
 <style lang="postcss" scoped>
-@import url("https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800");
-@import "normalize.css";
+/* @import url("https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800");
+@import "normalize.css"; */
 @import url("../../../styles/mixins.pcss");
-@import url("../../../styles/layout/base.pcss");
+/* @import url("../../../styles/layout/base.pcss"); */
 
 /* Основная часть */
 
@@ -83,12 +131,21 @@ export default {
   min-height: 974px;
   background: linear-gradient(rgba(255, 250, 255, 0.5), rgba(41, 39, 39, 0.5)),
     url("~images/content/admin/main/bg_main.png") center center no-repeat;
+  background-size: cover;
 }
 
 .content__title {
   display: flex;
   align-items: center;
   padding: 61px 0px;
+
+  @include tablets {
+    padding: 51px 0px;
+  }
+
+  @include phones {
+    padding: 41px 0px;
+  }
 }
 
 .content__title-text {
@@ -96,6 +153,10 @@ export default {
   font-weight: bold;
   color: #2d3c4e;
   margin-right: 59px;
+
+  @include phones {
+    font-size: 18px;
+  }
 }
 
 .works__edit {
@@ -108,6 +169,11 @@ export default {
   padding: 30px 30px;
   margin-bottom: 30px;
   color: #2d3c4e;
+  margin-bottom: 32px;
+
+   @include phones {
+    margin-bottom: 10px;
+  }
 }
 
 .edit__title {
@@ -116,11 +182,24 @@ export default {
   border-bottom: 1px solid #ccc;
   padding-bottom: 25px;
   margin-bottom: 48px;
+
+  @include tablets {
+    margin-bottom: 25px;
+  }
+
+  @include phones {
+    font-size: 16px;
+  }
 }
 
 .edit__content {
   display: flex;
   justify-content: space-between;
+
+  @include tablets {
+    flex-direction: column;
+    align-items: center;
+  }
 }
 
 .edit__image {
@@ -129,9 +208,23 @@ export default {
   align-items: center;
   justify-content: center;
   width: 49%;
+  max-width: 495px;
   height: 275px;
   background-color: #dee4ed;
   border: 1px dashed #a1a1a1;
+
+  @include tablets {
+    width: 100%;
+    max-width: 465px;
+    max-height: 275px;
+    margin-bottom: 54px;
+  }
+
+  @include phones {
+    max-width: 278px;
+    max-height: 155px;
+    margin-bottom: 40px;
+  }
 }
 
 .edit__image--text {
@@ -142,6 +235,10 @@ export default {
   opacity: 0.5;
   max-width: 230px;
   padding-bottom: 27px;
+
+  @include phones {
+    font-size: 14px;
+  }
 }
 
 /* Кнопка */
@@ -168,6 +265,11 @@ export default {
 
 .edit__form {
   width: 49%;
+
+  @include tablets {
+    width: 100%;
+    max-width: 465px;
+  }
 }
 
 .form__row {
@@ -179,6 +281,10 @@ export default {
   font-size: 16px;
   font-weight: 600;
   color: #2d3c4e;
+
+  @include phones {
+    font-size: 14px;
+  }
 }
 
 .form__label {
@@ -199,6 +305,10 @@ export default {
   border: none;
   background: transparent;
   padding-bottom: 18px;
+
+  @include phones {
+    font-size: 14px;
+  }
 }
 
 .form__row--textarea {
@@ -212,6 +322,12 @@ export default {
   min-height: 146px;
   resize: none;
   padding: 14px 80px 14px 20px;
+
+  @include phones {
+    font-size: 14px;
+    min-height: 205px;
+    padding: 10px 14px;
+  }
 }
 
 .edit-tags {
@@ -232,6 +348,12 @@ export default {
   background: #f4f4f4;
   border-radius: 15px;
   margin-right: 9px;
+
+  @include phones {
+    justify-content: center;
+    padding: 2% 4%;
+    margin-right: 2%;
+  }
 }
 
 .tags__item--name {
@@ -242,11 +364,24 @@ export default {
 .tags__item--remove {
   width: 11px;
   height: 11px;
-  background-image: svg-load("remove.svg",fill=#2d3c4e,width=100%, height=100%);
+  background-image: svg-load(
+    "remove.svg",
+    fill=#2d3c4e,
+    width=100%,
+    height=100%
+  );
   background-size: 11px 11px;
   background-repeat: no-repeat;
   background-position: 50%;
   cursor: pointer;
+}
+
+.form__row-btn {
+  display: flex;
+
+  @include tablets {
+    justify-content: center;
+  }
 }
 
 .form__btn--reset {
@@ -259,12 +394,15 @@ export default {
   border: 1px solid transparent;
   outline: none;
   margin-right: 59px;
+  @include phones {
+    font-size: 14px;
+    margin-right: 4%;
+  }
 }
 .form__btn--reset:hover {
   transform: translateY(-2px);
   transition: 0.3s;
 }
-
 
 .form__btn {
   width: 181px;
@@ -274,6 +412,10 @@ export default {
   font-weight: bold;
   color: #fff;
   background: linear-gradient(to top, #ea7400, #f29400);
+
+  @include phones {
+    font-size: 14px;
+  }
 }
 
 .form__btn:hover {
@@ -284,5 +426,188 @@ export default {
 .form__btn:focus {
   box-shadow: 1px 1px 10px 3px lightskyblue;
   transition: 0.3s;
+}
+
+.works__list {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.works__item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 30%;
+  /* min-height: 556px; */
+  background-color: #fff;
+  margin-bottom: 30px;
+  /* margin-right: 3%; */
+
+  @include tablets {
+    width: 48%;
+  }
+
+  @include phones {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+}
+
+.works__item-first {
+  background: linear-gradient(to left, #ea7400, #f29400);
+  justify-content: center;
+
+  @include phones {
+    min-height: 111px;
+  }
+}
+
+.works__add {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn__add {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  @include phones {
+    flex-direction: row;
+  }
+}
+
+.works__add-btn {
+  width: 150px;
+  height: 150px;
+  border: 2px solid #fff;
+  border-radius: 50%;
+  background-image: svg-load(
+    "remove.svg",
+    fill=#fff,
+    width=100%,
+    height=100%,
+    style= "transform: rotate(45deg)"
+  );
+  background-color: #ff9d00;
+  background-size: 34px 34px;
+  background-repeat: no-repeat;
+  background-position: 50%;
+
+  @include phones {
+    width: 50px;
+    height: 50px;
+    background-size: 12px 12px;
+    margin-right: 20px;
+  }
+}
+
+.works__add-text {
+  max-width: 95px;
+  text-align: center;
+  color: #fff;
+  font-size: 18px;
+  font-weight: bold;
+  line-height: 1.67;
+  padding-top: 30px;
+
+  @include phones {
+    max-width: 150px;
+    font-size: 16px;
+    padding-top: 0px;
+  }
+}
+
+.works__display {
+  width: 100%;
+  max-height: 190px;
+  overflow: hidden;
+}
+
+.works__desc {
+  display: flex;
+  flex-direction: column;
+
+  color: #2d3c4e;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.88;
+  padding: 7% 9%;
+
+  @include phones {
+    font-size: 14px;
+  }
+}
+
+.works__desc-title {
+  font-size: 18px;
+  font-weight: bold;
+  line-height: 1.67;
+  margin-bottom: 26px;
+
+  @include phones {
+    margin-bottom: 15px;
+  }
+}
+
+.works__desc-text {
+  opacity: 0.7;
+  padding-bottom: 6%;
+}
+
+.works__desc-link {
+  color: #4b6fd7;
+  margin-bottom: 8%;
+
+  @include phones {
+    margin-bottom: 30%;
+  }
+}
+
+.works__desc-btn {
+  display: flex;
+  justify-content: space-between;
+}
+
+.works__btn-edit,
+.works__btn-delete {
+  display: flex;
+  align-items: center;
+  background-color: transparent;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 50%;
+  padding: 0;
+}
+
+.btn-edit--text {
+  opacity: 0.5;
+  margin-right: 11px;
+}
+
+.btn-edit--icon.pen {
+  background-image: svg-load(
+    "pencil.svg",
+    fill=#383bcf,
+    width=100%,
+    height=100%
+  );
+  width: 14px;
+  height: 14px;
+}
+
+.btn-edit--icon.remove {
+  background-image: svg-load(
+    "remove.svg",
+    fill=#c92e2e,
+    width=100%,
+    height=100%
+  );
+  width: 14px;
+  height: 14px;
 }
 </style>

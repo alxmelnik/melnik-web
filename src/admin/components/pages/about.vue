@@ -3,7 +3,7 @@
     .container.content__container
       .content__title
         .content__title-text
-          span Блок «Работы»
+          span Блок «Обо мне»
         .content__title-btn
           a.btn__add(href="#")
             .btn__add-circle 
@@ -22,7 +22,7 @@
                 .skill__desc
                   input.skill__desc-name(type="text" name="name" placeholder="Git" ) 
                 .skill__percent
-                  input.percent-number(type="text" name="percent" placeholder="100")
+                  input.percent-number(type="number" name="percent" placeholder="100")
                   .percent %
                 .skill__btn
                   .skill__btn-edit
@@ -32,7 +32,7 @@
               .new__skill
                 input.new__skill-name(type="text" name="name" placeholder="Новый навык" )
               .new__percent
-                  input.new__percent-number(type="text" name="percent" placeholder="100")
+                  input.new__percent-number(type="number" name="percent" placeholder="100")
                   .percent %
               .skill__add-btn
                 a.btn__add(href="#")
@@ -49,7 +49,7 @@
                 .skill__desc
                   input.skill__desc-name(type="text" name="name" placeholder="" value="Git") 
                 .skill__percent
-                  input.percent-number(type="text" name="percent" placeholder="100")
+                  input.percent-number(type="number" name="percent" placeholder="100")
                   .percent %
                 .skill__btn
                   .skill__btn-edit
@@ -58,7 +58,7 @@
                 .skill__desc
                   input.skill__desc-name(type="text" name="name" placeholder="" value="Terminal") 
                 .skill__percent
-                  input.percent-number(type="text" name="percent" placeholder="100")
+                  input.percent-number(type="number" name="percent" placeholder="100")
                   .percent %
                 .skill__btn
                   .skill__btn-edit
@@ -67,7 +67,7 @@
                 .skill__desc
                   input.skill__desc-name(type="text" name="name" placeholder="" value="Gulp") 
                 .skill__percent
-                  input.percent-number(type="text" name="percent" placeholder="100")
+                  input.percent-number(type="number" name="percent" placeholder="100")
                   .percent %
                 .skill__btn
                   .skill__btn-edit
@@ -76,7 +76,7 @@
                 .skill__desc
                   input.skill__desc-name(type="text" name="name" placeholder="" value="Webpack") 
                 .skill__percent
-                  input.percent-number(type="text" name="percent" placeholder="100")
+                  input.percent-number(type="number" name="percent" placeholder="100")
                   .percent %
                 .skill__btn
                   .skill__btn-edit
@@ -86,7 +86,7 @@
               .new__skill
                 input.new__skill-name(type="text" name="name" placeholder="Новый навык" )
               .new__percent
-                  input.new__percent-number(type="text" name="percent" placeholder="100")
+                  input.new__percent-number(type="number" name="percent" placeholder="100")
                   .percent %
               .skill__add-btn
                 a.btn__add(href="#")
@@ -103,7 +103,7 @@
                 .skill__desc
                   input.skill__desc-name(type="text" name="name" placeholder="" value="Html5") 
                 .skill__percent
-                  input.percent-number(type="text" name="percent" placeholder="100")
+                  input.percent-number(type="number" name="percent" placeholder="100")
                   .percent %
                 .skill__btn
                   .skill__btn-edit
@@ -112,7 +112,7 @@
                 .skill__desc
                   input.skill__desc-name(type="text" name="name" placeholder="" value="CSS3" ) 
                 .skill__percent
-                  input.percent-number(type="text" name="percent" placeholder="100")
+                  input.percent-number(type="number" name="percent" placeholder="100")
                   .percent %
                 .skill__btn
                   .skill__btn-edit
@@ -121,7 +121,7 @@
                 .skill__desc
                   input.skill__desc-name(type="text" name="name" placeholder="" value="JavaScript" ) 
                 .skill__percent
-                  input.percent-number(type="text" name="percent" placeholder="100")
+                  input.percent-number(type="number" name="percent" placeholder="100")
                   .percent %
                 .skill__btn
                   .skill__btn-edit
@@ -130,7 +130,7 @@
                 .skill__desc
                   input.skill__desc-name(type="text" name="name" placeholder="" value="Jquery и Vue.js") 
                 .skill__percent
-                  input.percent-number(type="text" name="percent" placeholder="100")
+                  input.percent-number(type="number" name="percent" placeholder="100")
                   .percent %
                 .skill__btn
                   .skill__btn-edit
@@ -140,7 +140,7 @@
               .new__skill
                 input.new__skill-name(type="text" name="name" placeholder="Новый навык" )
               .new__percent
-                  input.new__percent-number(type="text" name="percent" placeholder="100")
+                  input.new__percent-number(type="number" name="percent" placeholder="100")
                   .percent %
               .skill__add-btn
                 a.btn__add(href="#")
@@ -159,10 +159,10 @@ export default {
 
 
 <style lang="postcss" scoped>
-@import url("https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800");
-@import "normalize.css";
+/* @import url("https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800");
+@import "normalize.css"; */
 @import url("../../../styles/mixins.pcss");
-@import url("../../../styles/layout/base.pcss");
+/* @import url("../../../styles/layout/base.pcss"); */
 
 /* Основная часть */
 
@@ -170,12 +170,23 @@ export default {
   min-height: 974px;
   background: linear-gradient(rgba(255, 250, 255, 0.5), rgba(41, 39, 39, 0.5)),
     url("~images/content/admin/main/bg_main.png") center center no-repeat;
+  background-size: cover;
 }
 
 .content__title {
   display: flex;
   align-items: center;
   padding: 61px 0px;
+
+  @include tablets {
+    padding: 51px 0px;
+  }
+
+  @include phones {
+    padding: 40px 0px;
+    flex-direction: column;
+    align-items: flex-start;
+  }
 }
 
 .content__title-text {
@@ -183,16 +194,28 @@ export default {
   font-weight: bold;
   color: #2d3c4e;
   margin-right: 59px;
+
+  @include phones {
+    font-size: 18px;
+    margin-right: 0;
+    margin-bottom: 32px;
+  }
 }
 
 .content__title-btn {
+  display: flex;
   font-size: 16px;
   font-weight: 600;
   color: #ff9a00;
+
+  @include tablets {
+    font-size: 14px;
+  }
 }
 
 .btn__add {
   display: flex;
+  flex-direction: row;
   align-items: center;
 }
 
@@ -201,8 +224,13 @@ export default {
   height: 21px;
   border: 1px solid transparent;
   border-radius: 50%;
-  transform: rotate(45deg);
-  background-image: svg-load("remove.svg", fill=#fff, width=100%, height=100%);
+  background-image: svg-load(
+    "remove.svg",
+    fill=#fff,
+    width=100%,
+    height=100%,
+    style= "transform: rotate(45deg)"
+  );
   background-color: #ff9d00;
   background-size: 8px 8px;
   background-repeat: no-repeat;
@@ -214,6 +242,10 @@ export default {
   font-size: 16px;
   font-weight: 600;
   line-height: 2.12;
+
+  @include tablets {
+    font-size: 14px;
+  }
 }
 
 .skill__list {
@@ -232,6 +264,17 @@ export default {
   box-shadow: 4px 3px 20px 0 rgba(0, 0, 0, 0.4);
   padding: 30px 27px;
   margin-bottom: 30px;
+
+  @include tablets {
+    &:first-child {
+      display: none;
+    }
+  }
+
+  @include phones {
+    width: 100%;
+  }
+  
 }
 
 .skill__title {
@@ -256,6 +299,10 @@ export default {
   border: none;
   border-bottom: 1px solid transparent;
   padding-bottom: 10px;
+
+  @include phones {
+    font-size: 16px;
+  }
 }
 
 .skill__input-name:focus {
@@ -279,11 +326,19 @@ export default {
   font-size: 16px;
   font-weight: normal;
   color: #2d3c4e;
+
+  @include phones {
+    font-size: 14px;
+  }
 }
 
 .skill__desc {
   width: 53%;
   margin-right: 20px;
+
+  @include phones {
+    width: 40%;
+  }
 }
 
 .skill__desc-name {
@@ -301,6 +356,10 @@ export default {
   width: 14%;
   display: flex;
   align-items: center;
+
+  @include phones {
+    width: 20%;
+  }
 }
 
 .percent-number {
@@ -346,6 +405,10 @@ export default {
 .new__skill {
   width: 40%;
   margin-right: 10px;
+
+  @include phones {
+    width: 50%;
+  }
 }
 
 .new__skill-name {
@@ -361,6 +424,11 @@ export default {
   display: flex;
   align-items: center;
   margin-right: 30px;
+
+  @include phones {
+    width: 19%;
+    margin-right: 20px;
+  }
 }
 
 .new__percent-number {
@@ -376,8 +444,13 @@ export default {
   height: 40px;
   border: 1px solid #fff;
   border-radius: 50%;
-  transform: rotate(45deg);
-  background-image: svg-load("remove.svg", fill=#fff, width=100%, height=100%);
+  background-image: svg-load(
+    "remove.svg",
+    fill=#fff,
+    width=100%,
+    height=100%,
+    style= "transform: rotate(45deg)"
+  );
   background-color: #ff9d00;
   background-size: 15px 15px;
   background-repeat: no-repeat;
