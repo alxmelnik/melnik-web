@@ -2,18 +2,43 @@
   nav.nav
     .container.nav__container
       ul.nav__list
-        li.nav__item.active
-          a.nav__link(href="#") Обо мне
-        li.nav__item
-          a.nav__link(href="#") Работы
-        li.nav__item
-          a.nav__link(href="#") Отзывы
+        li.nav__item(v-for="tab in tabs")
+          router-link(
+            :data-text="tab.title" 
+            :to="tab.href"
+            exact-active-class="active"
+          ).nav__link
+
+
+
+
+          
+
+      //- ul.nav__list
+      //-   li.nav__item.active
+      //-     a.nav__link(href="/") Обо мне
+      //-   li.nav__item
+      //-     a.nav__link(href="#/works") Работы
+      //-   li.nav__item
+      //-     a.nav__link(href="#/reviews") Отзывы
 </template>
 
 
 <script>
 export default {
-  name: 'Navigation'
+  data () {
+    return {
+      tabs: [
+        { title: "Обо мне", href: "/"},
+        { title: "Отзывы", href: "/works"},
+        { title: "Работы", href: "/reviews"}
+      ]
+    };
+  },
+
+  // name: 'Navigation'
+  
+
 };
 </script>
 
@@ -28,6 +53,8 @@ export default {
 
  .nav {
   min-height: 77px;
+  max-width: 300px;
+  width: 100%;
 }
 
 
@@ -35,6 +62,8 @@ export default {
 .nav__list {
   display: flex;
   align-items: center;
+  justify-content: space-between;
+  height: 80px;
 
    @include phones {
     justify-content: center;
@@ -42,19 +71,41 @@ export default {
 }
 
 .nav__item {
-  padding: 30px 28px;
+  width: 33.3%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
   font-size: 16px;
   font-weight: normal;
   color: #2d3c4e;
-  border-bottom: 3px solid transparent;
 
   @include phones {
-    padding: 30px 18px;
+    /* padding: 30px 18px; */
     font-size: 14px;
   }
 }
 
-.nav__item.active {
+
+.nav__link {
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+  border-bottom: 3px solid transparent;
+  
+  &:before {
+    content: attr(data-text);
+  }
+
+}
+
+
+.nav__link:hover, 
+.nav__link.active {
   color: #ff9a00;
   font-weight: 600;
   border-bottom: 3px solid #ff9a00;

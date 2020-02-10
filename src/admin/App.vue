@@ -1,42 +1,37 @@
 
 <template lang="pug">
 .wrapper.admin-wrapper
+  
   Head
- 
-  .maincontent
-    Navigation
-    About
+  Navigation
 
   .maincontent
-    Works
-
-  .maincontent
-    Reviews
+    router-view
+   
                     
 </template>
 
 <script>
-import Head from "./components/Head";
-import Navigation from "./components/Navigation";
+import Login from "./components/pages/login";
+
 import About from "./components/pages/about";
 import Works from "./components/pages/works";
 import Reviews from "./components/pages/reviews";
 
 export default {
   components: {
-    Head,
-    Navigation,
+    Login,
     About,
     Works,
-    Reviews
+    Reviews,
 
+    Head: () => import("./components/Head"),
+    Navigation: () => import("./components/Navigation")
     
   }
 };
 
 </script>
-
-
 
 
 <style lang="postcss">
@@ -55,9 +50,7 @@ export default {
   }
 }
 
-.maincontent {
-  margin-bottom: 50px;
-}
+
 
 
 
