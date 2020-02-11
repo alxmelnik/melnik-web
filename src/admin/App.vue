@@ -12,7 +12,7 @@
 </template>
 
 <script>
-import Login from "./components/pages/login";
+
 
 import About from "./components/pages/about";
 import Works from "./components/pages/works";
@@ -20,7 +20,7 @@ import Reviews from "./components/pages/reviews";
 
 export default {
   components: {
-    Login,
+    
     About,
     Works,
     Reviews,

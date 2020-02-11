@@ -4,26 +4,38 @@
       .login-btn  
         button.login__btn-delete  
           .btn-edit--icon.remove
-      form.form__tag
+      form(@submit.prevent="login").form__tag
 
-        h1.form__title
-          span Авторизация
+        h1.form__title Авторизация
 
         .form__row
-          label.form__block
-            .form__label Логин
+          app-input(
+            title="Логин"
+            icon="user"
+            v-model="user.name"
+          )
 
-            .input
-              .input__pic
-                .input__pic-icon.user
-              input.form__input(type="text" name="login" placeholder="" value="" required)
+          //- label.form__block
+          //-   .form__label Логин
+
+          //-   .input
+          //-     .input__pic
+          //-       .input__pic-icon.user
+          //-     input.form__input(type="text" name="login" placeholder="" value="" required)
         .form__row
-          label.form__block
-            .form__label Пароль
-            .input
-              .input__pic
-                  .input__pic-icon.link
-              input.form__input(type="password" name="password" placeholder="" value="" required)
+          app-input(
+            title="Пароль"
+            icon="key"
+            type="password"
+            v-model="user.password"
+          )
+
+          //- label.form__block
+          //-   .form__label Пароль
+          //-   .input
+          //-     .input__pic
+          //-         .input__pic-icon.link
+          //-     input.form__input(type="password" name="password" placeholder="" value="" required)
 
         .form__row-btn  
           button.form__btn(type="submit" value="Отправить") Отправить
@@ -33,8 +45,36 @@
 
 
 <script>
+import $axios from "../../requests";
+
 export default {
-  name: "Login"
+  components: {
+    appInput: () => import("../input")
+  },
+
+  data() {
+    return {
+      user: {
+        name: "",
+        password: ""
+      }
+    };
+  },
+
+  methods: {
+    async login() {
+      try {
+        const response = await $axios.post("/login", this.user);
+        const token = response.data.token;
+        localStorage.setItem("token", token);
+        $axios.defaults.headers["Authorization"] = `Bearer ${token}`;
+        this.$router.replace("/");
+      } catch (error) {
+        console.warn("Неверный логин или пароль");
+      }
+    }
+  }
+  
 };
 </script>
 
@@ -75,9 +115,8 @@ export default {
 
   @include phones {
     height: 100%;
-   padding: 0px 10%;
+    padding: 0px 10%;
   }
-
 }
 
 .form__tag {
@@ -103,7 +142,6 @@ export default {
     top: 5%;
     right: 10%;
   }
-
 }
 
 .btn-edit--icon.remove {
@@ -114,7 +152,6 @@ export default {
     fill=#2d3c4e,
     width=100%,
     height=100%
-    
   );
 }
 
@@ -131,7 +168,7 @@ export default {
 }
 
 .form__row {
-  border-bottom: 2px solid #ccc;
+  /* border-bottom: 2px solid #ccc; */
   margin-bottom: 40px;
 }
 
@@ -139,8 +176,6 @@ export default {
   font-size: 16px;
   font-weight: 600;
   color: #2d3c4e;
-
-  
 }
 
 .form__label {
@@ -177,8 +212,6 @@ export default {
   background-image: svg-load("link.svg", fill=#2d3c4e, width=100%, height=100%);
 }
 
-
-
 .form__input {
   width: 85%;
   font-size: 18px;
@@ -187,6 +220,7 @@ export default {
   outline: none;
   border: none;
   background: transparent;
+  line-height: 2;
 
   @include phones {
     font-size: 14px;
