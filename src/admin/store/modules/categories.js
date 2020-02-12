@@ -4,9 +4,9 @@ export default {
     categories: []
   },
   mutations: {
-    
+
   },
   actions: {
-   
+
   }
 };

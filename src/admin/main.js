@@ -1,11 +1,11 @@
 import Vue from 'vue';
 import App from './App.vue';
 import router from './router';
-// import store from './store';
+import store from './store';
 import $axios from './requests';
 import "@babel/polyfill";
 
-// store.$axios = $axios;
+store.$axios = $axios;
 
 
 
@@ -13,6 +13,6 @@ import "@babel/polyfill";
 new Vue({
   el: "#app-root",
   router,
-  // store,
+  store,
   render: h => h(App)
 });

@@ -5,7 +5,7 @@ Vue.use(Vuex);
 
 import categories from "./modules/categories"
 
-export default store = new Vuex.Store({
+export default new Vuex.Store({
   modules: {
     categories
   }

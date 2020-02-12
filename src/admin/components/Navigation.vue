@@ -53,7 +53,7 @@ export default {
 
  .nav {
   min-height: 77px;
-  max-width: 300px;
+  
   width: 100%;
 }
 
@@ -64,6 +64,7 @@ export default {
   align-items: center;
   justify-content: space-between;
   height: 80px;
+  max-width: 300px;
 
    @include phones {
     justify-content: center;

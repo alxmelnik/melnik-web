@@ -12,25 +12,20 @@
 </template>
 
 <script>
-
-
 import About from "./components/pages/about";
 import Works from "./components/pages/works";
 import Reviews from "./components/pages/reviews";
 
 export default {
   components: {
-    
     About,
     Works,
     Reviews,
 
     Head: () => import("./components/Head"),
     Navigation: () => import("./components/Navigation")
-    
   }
 };
-
 </script>
 
 
@@ -44,14 +39,15 @@ export default {
   margin: 0 auto;
   max-width: 1080px;
   width: 95%;
-  
+
   @include phones {
     width: 85%;
   }
 }
 
-
-
-
+button {
+  padding: 0;
+  background: transparent;
+}
 
 </style>
