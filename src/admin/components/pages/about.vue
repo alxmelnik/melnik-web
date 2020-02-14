@@ -4,19 +4,24 @@
       .content__title
         .content__title-text
           span Блок «Обо мне»
-        button(type="submit").content__title-btn
-          a.btn__add(href="#")
+        button(type="button" ).content__title-btn 
+          .btn__add(href="#")
             .btn__add-circle 
             .btn__add-text Добавить группу
 
       .content__skill
         ul.skill__list 
-                
           li.skill__item
-            .skill__title
+
+            form(@submit.prevent="addNewCategory").skill__title
               .skill__title-input
-                input.skill__input-name(type="text" name="name" placeholder="Название новой группы" ) 
-              .skill__title-icon
+                input.skill__input-name(
+                  type="text" name="name"
+                  placeholder="Название новой группы"
+                  v-model="title"
+                  ) 
+              button(type="submit").skill__title-icon
+
             ul.skill__table
               li.skill__box
                 .skill__desc
@@ -152,8 +157,22 @@
 
 
 <script>
+import { mapActions} from "vuex";
 export default {
-  name: "About"
+  // name: 'About',
+  data: () => ({
+    title: ""
+  }),
+  methods: {
+    ...mapActions("categories", ["addNewCategory"]),
+    async addNewCategory() {
+      try {
+        await this.addNewCategory(this.title);
+      } catch (error) {
+        alert(error.message);
+      }
+    }
+  }
 };
 </script>
 
