@@ -1,6 +1,10 @@
 .user-info {
   display:flex;
-  align-items: flex-start;
+
+  @include tablets {
+    flex-direction: column;
+    text-align: center;
+  }
 
 }
 
@@ -10,8 +14,24 @@
   text-align: right;
   line-height: 1.67;
   opacity: 0.4;
-
   margin-right: 60px;
+
+  @include desktop {
+    margin-right: 42px;
+  }
+
+  @include tablets {
+    font-size: 16px;
+    text-align: center;
+    margin-right: 0;
+    margin-bottom: 30px;
+  }
+
+  @include phones {
+    font-size: 14px;
+    text-align: center;
+    margin-bottom: 7%;
+  }
 }
 
 .user-info__username {
@@ -19,4 +39,13 @@
   font-weight: 800;
   line-height: 0.95;
   max-width: 400px;
+
+  @include tablets {
+    font-size: 48px;
+  }
+
+  @include phones {
+    font-size: 36px;
+    line-height: 1.33;
+  }
 }
