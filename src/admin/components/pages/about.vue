@@ -44,112 +44,112 @@
                   .btn__add-circle--big 
 
               //- 2группа
-          //- li.skill__item
-          //-   .skill__title
-          //-     .skill__title-input
-          //-       input.skill__input-name(type="text" name="name" placeholder="Название новой группы" value="Workflow" )
-          //-     .skill__title-icon
-          //-   ul.skill__table
-          //-     li.skill__box
-          //-       .skill__desc
-          //-         input.skill__desc-name(type="text" name="name" placeholder="" value="Git") 
-          //-       .skill__percent
-          //-         input.percent-number(type="number" name="percent" placeholder="100")
-          //-         .percent %
-          //-       .skill__btn
-          //-         .skill__btn-edit
-          //-         .skill__btn-delete
-          //-     li.skill__box
-          //-       .skill__desc
-          //-         input.skill__desc-name(type="text" name="name" placeholder="" value="Terminal") 
-          //-       .skill__percent
-          //-         input.percent-number(type="number" name="percent" placeholder="100")
-          //-         .percent %
-          //-       .skill__btn
-          //-         .skill__btn-edit
-          //-         .skill__btn-delete
-          //-     li.skill__box
-          //-       .skill__desc
-          //-         input.skill__desc-name(type="text" name="name" placeholder="" value="Gulp") 
-          //-       .skill__percent
-          //-         input.percent-number(type="number" name="percent" placeholder="100")
-          //-         .percent %
-          //-       .skill__btn
-          //-         .skill__btn-edit
-          //-         .skill__btn-delete
-          //-     li.skill__box
-          //-       .skill__desc
-          //-         input.skill__desc-name(type="text" name="name" placeholder="" value="Webpack") 
-          //-       .skill__percent
-          //-         input.percent-number(type="number" name="percent" placeholder="100")
-          //-         .percent %
-          //-       .skill__btn
-          //-         .skill__btn-edit
-          //-         .skill__btn-delete
+          li.skill__item
+            .skill__title
+              .skill__title-input
+                input.skill__input-name(type="text" name="name" placeholder="Название новой группы" value="Workflow" )
+              .skill__title-icon
+            ul.skill__table
+              li.skill__box
+                .skill__desc
+                  input.skill__desc-name(type="text" name="name" placeholder="" value="Git") 
+                .skill__percent
+                  input.percent-number(type="number" name="percent" placeholder="100")
+                  .percent %
+                .skill__btn
+                  .skill__btn-edit
+                  .skill__btn-delete
+              li.skill__box
+                .skill__desc
+                  input.skill__desc-name(type="text" name="name" placeholder="" value="Terminal") 
+                .skill__percent
+                  input.percent-number(type="number" name="percent" placeholder="100")
+                  .percent %
+                .skill__btn
+                  .skill__btn-edit
+                  .skill__btn-delete
+              li.skill__box
+                .skill__desc
+                  input.skill__desc-name(type="text" name="name" placeholder="" value="Gulp") 
+                .skill__percent
+                  input.percent-number(type="number" name="percent" placeholder="100")
+                  .percent %
+                .skill__btn
+                  .skill__btn-edit
+                  .skill__btn-delete
+              li.skill__box
+                .skill__desc
+                  input.skill__desc-name(type="text" name="name" placeholder="" value="Webpack") 
+                .skill__percent
+                  input.percent-number(type="number" name="percent" placeholder="100")
+                  .percent %
+                .skill__btn
+                  .skill__btn-edit
+                  .skill__btn-delete
                 
-          //-   .skill__add 
-          //-     .new__skill
-          //-       input.new__skill-name(type="text" name="name" placeholder="Новый навык" )
-          //-     .new__percent
-          //-         input.new__percent-number(type="number" name="percent" placeholder="100")
-          //-         .percent %
-          //-     .skill__add-btn
-          //-       a.btn__add(href="#")
-          //-         .btn__add-circle--big 
+            .skill__add 
+              .new__skill
+                input.new__skill-name(type="text" name="name" placeholder="Новый навык" )
+              .new__percent
+                  input.new__percent-number(type="number" name="percent" placeholder="100")
+                  .percent %
+              .skill__add-btn
+                a.btn__add(href="#")
+                  .btn__add-circle--big 
 
-          //-     //- 3группа
-          //- li.skill__item
-          //-   .skill__title
-          //-     .skill__title-input
-          //-       input.skill__input-name(type="text" name="name" placeholder="Название новой группы" value="Frontend")
-          //-     .skill__title-icon
-          //-   ul.skill__table
-          //-     li.skill__box
-          //-       .skill__desc
-          //-         input.skill__desc-name(type="text" name="name" placeholder="" value="Html5") 
-          //-       .skill__percent
-          //-         input.percent-number(type="number" name="percent" placeholder="100")
-          //-         .percent %
-          //-       .skill__btn
-          //-         .skill__btn-edit
-          //-         .skill__btn-delete
-          //-     li.skill__box
-          //-       .skill__desc
-          //-         input.skill__desc-name(type="text" name="name" placeholder="" value="CSS3" ) 
-          //-       .skill__percent
-          //-         input.percent-number(type="number" name="percent" placeholder="100")
-          //-         .percent %
-          //-       .skill__btn
-          //-         .skill__btn-edit
-          //-         .skill__btn-delete
-          //-     li.skill__box
-          //-       .skill__desc
-          //-         input.skill__desc-name(type="text" name="name" placeholder="" value="JavaScript" ) 
-          //-       .skill__percent
-          //-         input.percent-number(type="number" name="percent" placeholder="100")
-          //-         .percent %
-          //-       .skill__btn
-          //-         .skill__btn-edit
-          //-         .skill__btn-delete
-          //-     li.skill__box
-          //-       .skill__desc
-          //-         input.skill__desc-name(type="text" name="name" placeholder="" value="Jquery и Vue.js") 
-          //-       .skill__percent
-          //-         input.percent-number(type="number" name="percent" placeholder="100")
-          //-         .percent %
-          //-       .skill__btn
-          //-         .skill__btn-edit
-          //-         .skill__btn-delete
+              //- 3группа
+          li.skill__item
+            .skill__title
+              .skill__title-input
+                input.skill__input-name(type="text" name="name" placeholder="Название новой группы" value="Frontend")
+              .skill__title-icon
+            ul.skill__table
+              li.skill__box
+                .skill__desc
+                  input.skill__desc-name(type="text" name="name" placeholder="" value="Html5") 
+                .skill__percent
+                  input.percent-number(type="number" name="percent" placeholder="100")
+                  .percent %
+                .skill__btn
+                  .skill__btn-edit
+                  .skill__btn-delete
+              li.skill__box
+                .skill__desc
+                  input.skill__desc-name(type="text" name="name" placeholder="" value="CSS3" ) 
+                .skill__percent
+                  input.percent-number(type="number" name="percent" placeholder="100")
+                  .percent %
+                .skill__btn
+                  .skill__btn-edit
+                  .skill__btn-delete
+              li.skill__box
+                .skill__desc
+                  input.skill__desc-name(type="text" name="name" placeholder="" value="JavaScript" ) 
+                .skill__percent
+                  input.percent-number(type="number" name="percent" placeholder="100")
+                  .percent %
+                .skill__btn
+                  .skill__btn-edit
+                  .skill__btn-delete
+              li.skill__box
+                .skill__desc
+                  input.skill__desc-name(type="text" name="name" placeholder="" value="Jquery и Vue.js") 
+                .skill__percent
+                  input.percent-number(type="number" name="percent" placeholder="100")
+                  .percent %
+                .skill__btn
+                  .skill__btn-edit
+                  .skill__btn-delete
                 
-          //-   .skill__add 
-          //-     .new__skill
-          //-       input.new__skill-name(type="text" name="name" placeholder="Новый навык" )
-          //-     .new__percent
-          //-         input.new__percent-number(type="number" name="percent" placeholder="100")
-          //-         .percent %
-          //-     .skill__add-btn
-          //-       a.btn__add(href="#")
-          //-         .btn__add-circle--big 
+            .skill__add 
+              .new__skill
+                input.new__skill-name(type="text" name="name" placeholder="Новый навык" )
+              .new__percent
+                  input.new__percent-number(type="number" name="percent" placeholder="100")
+                  .percent %
+              .skill__add-btn
+                a.btn__add(href="#")
+                  .btn__add-circle--big 
 
 
 </template>

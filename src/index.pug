@@ -25,27 +25,42 @@ html(lang="en")
           .welcome__layer(data-speed="0.35")
             +image('content/hero/bg/bg_glade_gradient-p.png', 'welcome__image')
             
-          section.hero 
+          section.hero(id="hero") 
             .container.hero__container
               header.hero__header
-                .hero__logo 
-                  .logo АМ
+                .hero__logotip
+                  a.hero__logo(href="/") 
+                    .logo АМ
+                  a.hero__admin(href="/admin") 
+                    .logo Админ-панель
                   
                 .hero__menu
                   nav.nav
-                    - var menu = ["Главная", "Обо мне", "Навыки", "Работы", "Отзывы", "Связаться"]
                     ul.nav__list
-                      each item in menu
-                        li.nav__item
-                          a.nav__link(href="#") #{item}
+                      li.nav__item
+                        a.nav__link(href="#hero") Главная 
+                      li.nav__item
+                        a.nav__link(href="#about") Обо мне 
+                      li.nav__item
+                        a.nav__link(href="#skills") Навыки 
+                      li.nav__item
+                        a.nav__link(href="#works") Работы 
+                      li.nav__item
+                        a.nav__link(href="#reviews") Отзывы 
+                      li.nav__item
+                        a.nav__link(href="#contact") Связаться 
 
                 .hero__social
-                  - var icons = ["insta", "vk", "github"]
                   ul.social__list
-                    each item in icons
                       li.social__item
-                        a.social__link(href="")
-                          +icon(item, "social__icon")
+                        a.social__link(href="https://www.instagram.com/sashamell7" target="_blank")
+                          +icon("insta", "social__icon")
+                      li.social__item
+                        a.social__link(href="https://vk.com/mell75" target="_blank")
+                          +icon("vk", "social__icon")
+                      li.social__item
+                        a.social__link(href="https://github.com/alxmelnik" target="_blank")
+                          +icon("github", "social__icon")
 
                 .hamburger
                   +image('content/hero/hamburger.png', 'hamburger__link--pic')
@@ -59,12 +74,12 @@ html(lang="en")
                   .user-info__username Александр Мельник
 
               .hero__buttons
-                a.btn__scroll
+                a.btn__scroll(href="#about")
                   .scroll__text Скролл
                   .scroll__link
                     +icon("scroll", "scroll__icon") 
                     
-          section.about 
+          section.about(id="about")
             .container
               .about__container
                 .about__left
@@ -105,7 +120,7 @@ html(lang="en")
                   p.about__text Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите, как тут всё классно и красиво!
         
         
-        section.skill
+        section.skill(id="skills")
           .container.skill__container
             .skill__title
               h2.skill__title-text Чем я могу быть полезен вам
@@ -114,7 +129,7 @@ html(lang="en")
             .skill__widget
               #skills-component
               
-        section.works
+        section.works(id="works")
           .container.works__container
             h2.works__title Мои работы
               
@@ -163,7 +178,7 @@ html(lang="en")
 
         .contact-wrapper
           .container.contact__container
-            section.reviews 
+            section.reviews(id="reviews") 
               #reviews-component
 
                 //- h2.reviews__title Что обо мне говорят
@@ -190,10 +205,10 @@ html(lang="en")
                 //-         .reviews__avatar
                 //-           +image('content/reviews/sabancev.jpg', 'reviews__avatar-pic')
                 //-         .reviews__author-info 
-                //-           h4.reviews__author-title Владимир Сабанцев
+                //-           h`4.reviews__author-title Владимир Сабанцев
                 //-           span.reviews__author-desc Преподаватель
 
-            section.contact
+            section.contact(id="contact") 
               h2.contact__title Связаться со мной
               .form
                 form.form__tag(action="")
@@ -238,22 +253,34 @@ html(lang="en")
               .foot__right
                 .foot__menu
                   nav.nav
-                    - var menu = ["Главная", "Обо мне", "Навыки", "Работы", "Отзывы", "Связаться"]
                     ul.nav__list
-                      each item in menu
-                        li.nav__item
-                          a.nav__link(href="#") #{item}
+                      li.nav__item
+                        a.nav__link(href="#hero") Главная 
+                      li.nav__item
+                        a.nav__link(href="#about") Обо мне 
+                      li.nav__item
+                        a.nav__link(href="#skills") Навыки 
+                      li.nav__item
+                        a.nav__link(href="#works") Работы 
+                      li.nav__item
+                        a.nav__link(href="#reviews") Отзывы 
+                      li.nav__item
+                        a.nav__link(href="#contact") Связаться 
 
                 .foot__inner
                   .foot__social-desc
                     .foot__social-text Этот сайт я сделал в рамках обучения в Школе онлайн образования Loftschool
                     .foot__social
-                      - var icons = ["insta", "vk", "github"]
                       ul.social__list
-                        each item in icons
-                          li.social__item.social__item-footer
-                            a.social__link(href="")
-                              +icon(item, "social__icon social__icon-footer")
+                        li.social__item.social__item-footer
+                          a.social__link.social__link-footer(href="https://www.instagram.com/sashamell7" target="_blank")
+                            +icon("insta", "social__icon social__icon-footer")
+                        li.social__item.social__item-footer
+                          a.social__link.social__link-footer(href="https://vk.com/mell75" target="_blank")
+                            +icon("vk", "social__icon social__icon-footer")
+                        li.social__item.social__item-footer
+                          a.social__link.social__link-footer(href="https://github.com/alxmelnik" target="_blank")
+                            +icon("github", "social__icon social__icon-footer")
                   
                   .foot__quote
                     p.foot__quote-text Всегда пишите код так, будто сопровождать его будет склонный к насилию психопат, который знает где вы живете
@@ -261,7 +288,7 @@ html(lang="en")
 
     .fullscreen-menu
       .fullscreen-menu__left
-        .hero__logo.fullscreen-menu__logo 
+        a.hero__logo.fullscreen-menu__logo(href="/")  
           .logo АМ
 
       .fullscreen-menu__right
@@ -272,25 +299,29 @@ html(lang="en")
         nav.fullscreen-menu__nav
           ul.fullscreen-menu__list
             li.fullscreen-menu__item
-              a.fullscreen-menu__link(href="#main") Главная
+              a.fullscreen-menu__link(href="#hero") Главная
             li.fullscreen-menu__item
-              a.fullscreen-menu__link(href="#main") Обо мне
+              a.fullscreen-menu__link(href="#about") Обо мне
             li.fullscreen-menu__item
-              a.fullscreen-menu__link(href="#main") Навыки
+              a.fullscreen-menu__link(href="#skills") Навыки
             li.fullscreen-menu__item
-              a.fullscreen-menu__link(href="#main") Работы
+              a.fullscreen-menu__link(href="#works") Работы
             li.fullscreen-menu__item
-              a.fullscreen-menu__link(href="#main") Отзывы
+              a.fullscreen-menu__link(href="#reviews") Отзывы
             li.fullscreen-menu__item
-              a.fullscreen-menu__link(href="#main") Связаться
+              a.fullscreen-menu__link(href="#contact") Связаться
 
         .fullscreen-menu__social
-            - var icons = ["insta", "vk", "github"]
             ul.social__list
-              each item in icons
-                li.social__item
-                  a.social__link(href="")
-                    +icon(item, "social__icon social__icon--popup")
+              li.social__item
+                a.social__link(href="https://www.instagram.com/sashamell7" target="_blank")
+                  +icon("insta", "social__icon social__icon--popup")
+              li.social__item
+                a.social__link(href="https://vk.com/mell75" target="_blank")
+                  +icon("vk", "social__icon social__icon--popup")
+              li.social__item
+                a.social__link(href="https://github.com/alxmelnik" target="_blank")
+                  +icon("github", "social__icon social__icon--popup")
 
 
 

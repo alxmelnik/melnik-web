@@ -18,9 +18,9 @@
       //-   li.nav__item.active
       //-     a.nav__link(href="/") Обо мне
       //-   li.nav__item
-      //-     a.nav__link(href="#/works") Работы
+      //-     a.nav__link(href="/works") Работы
       //-   li.nav__item
-      //-     a.nav__link(href="#/reviews") Отзывы
+      //-     a.nav__link(href="/reviews") Отзывы
 </template>
 
 
@@ -30,8 +30,8 @@ export default {
     return {
       tabs: [
         { title: "Обо мне", href: "/"},
-        { title: "Отзывы", href: "/works"},
-        { title: "Работы", href: "/reviews"}
+        { title: "Работы", href: "/works"},
+        { title: "Отзывы", href: "/reviews"}
       ]
     };
   },
