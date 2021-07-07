@@ -9,7 +9,7 @@
         .head__title
           span Панель администрирования
         .head__exit
-          a.head__exit--link(href="./") Выйти
+          a.head__exit--link(href="../") Выйти
 
 </template>
 
