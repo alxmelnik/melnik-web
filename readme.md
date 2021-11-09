@@ -9,7 +9,7 @@
 
 | ФИО | Мельник Александр Игоревич |
 | ------ | ------ |
-| Номер домашнего задания | ДЗ 1 |
+| Задания |  1 |
 | Ссылка на репозиторий | https://github.com/alxmelnik/melnik-web/tree/newbranch|
 | Ссылка на рабочий сайт | https://alxmelnik.github.io/melnik-web/|
 | Примечания | - |
